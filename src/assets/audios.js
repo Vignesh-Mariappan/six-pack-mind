@@ -1,3 +1,10 @@
+/* Well being first */
+import WellBeingFirstOne from "./audios/Well_being_first/1-Ready_to_lose_getting_and_doing_but_not_being.mp3";
+import WellBeingFirstTwo from "./audios/Well_being_first/2-Well_being_before_closed_ones.mp3";
+import WellBeingFirstThree from "./audios/Well_being_first/3-Success_due_to_well_being_not_at_the_cost_of_well_being.mp3";
+import WellBeingFirstFour from "./audios/Well_being_first/4-Well_being_gives_me_top_performance.mp3";
+import WellBeingFirstFive from "./audios/Well_being_first/5-Balance_bhava_tough_conversations_made_easy.mp3";
+
 /* No Fake Needs */
 import NoFakeNeedsOne from "./audios/Fake_needs/1-I_will_release_myself_from_jail.mp3";
 import NoFakeNeedsTwo from "./audios/Fake_needs/2-All_expectations_are_extras.mp3";
@@ -7,9 +14,9 @@ import NoFakeNeedsFive from "./audios/Fake_needs/5-I_will_playfully_break_2mm_ev
 
 /* No Big Deal */
 import NoBigDealOne from "./audios/No_big_deal/1-Black_hole_shrinking_no_big_deal.mp3";
-import NoBigDealTwo from "./audios/No_big_deal/2-I_accept_life's_plan_for_me.mp3";
+import NoBigDealTwo from "./audios/No_big_deal/2-I_accept_lifes_plan_for_me.mp3";
 import NoBigDealThree from "./audios/No_big_deal/3-I_will_be_a_gentle_judge_and_accept_them_for_who_they_are.mp3";
-import NoBigDealFour from "./audios/No_big_deal/4-I_release_the_dead_person's_weight.mp3";
+import NoBigDealFour from "./audios/No_big_deal/4-I_release_the_dead_persons_weight.mp3";
 import NoBigDealFive from "./audios/No_big_deal/5-I_am_not_a_fool_I_was_just_asleep_in_my_situations.mp3";
 
 /* Avoid Limiting Habits */
@@ -27,6 +34,37 @@ import SeverelyBlessedFour from "./audios/Severely_blessed/4-I_learn_during_bad_
 
 
 export const AUDIOS = {
+    "Well Being First": [
+        {
+            id: "WB01",
+            audioTitle: "Ready to lose getting and doing but not being",
+            audioPath: WellBeingFirstOne
+        },
+
+        {
+            id: "WB02",
+            audioTitle: "Well being before closed ones",
+            audioPath: WellBeingFirstTwo
+        },
+
+        {
+            id: "WB03",
+            audioTitle: "Success due to well being",
+            audioPath: WellBeingFirstThree
+        },
+
+        {
+            id: "WB04",
+            audioTitle: "Well being gives me top performance",
+            audioPath: WellBeingFirstFour
+        },
+
+        {
+            id: "WB05",
+            audioTitle: "Balance bhava tough conversations made easy",
+            audioPath: WellBeingFirstFive
+        },
+    ],
     "No Fake Needs": [
         {
             id: "NFN01",
@@ -62,13 +100,13 @@ export const AUDIOS = {
         {
             id: "NBD01",
             audioTitle: "Black hole shrinking no big deal",
-            audioPath: NoFakeNeedsOne
+            audioPath: NoBigDealOne
         },
 
         {
             id: "NBD02",
             audioTitle: "I accept life's plan for me",
-            audioPath: NoFakeNeedsTwo
+            audioPath: NoBigDealTwo
         },
 
         {
