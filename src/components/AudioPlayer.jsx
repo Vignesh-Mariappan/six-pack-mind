@@ -10,7 +10,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
   const [ showReplay, setShowReplay ] = useState(false);
   const [ muted, setMuted ] = useState(false);
   const [ volume, setVolume ] = useState(1);
-  const [ duration, setDuration ] = useState(0);
+  const [ duration, setDuration ] = useState("--:--");
   const [ currentTime, setCurrentTime ] = useState(0);
 
   useEffect(() => {
@@ -26,8 +26,8 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
         const seconds = Math.round(audioRef?.current?.duration);
         setDuration(calculateTime(seconds));
         progressBarRef.current.max = seconds;
-    }, 100)
-  } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState, audioRef?.current?.duration ]);
+    }, 300)
+  } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState ]);
 
   const calculateTime = (seconds) => {
     
@@ -139,7 +139,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
             <input ref={progressBarRef} type="range" defaultValue={"0"} className="range range-xs" onChange={changeRange} />
             <div className="flex justify-between items-center">
                 <span>{ calculateTime(currentTime) }</span>
-                <span>{ duration && !isNaN(duration) && duration }</span>
+                <span>{ duration }</span>
             </div>
             <audio  className='hidden' ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } />
         </div>  
