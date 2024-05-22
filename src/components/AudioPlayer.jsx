@@ -21,21 +21,18 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
     }
   }, [id, currentPlayingAudioId])
 
-  useEffect(() => {
-    setTimeout(() => {
-        const seconds = Math.round(audioRef?.current?.duration);
-        if(!isNaN(seconds)) {
-          setDuration(calculateTime(seconds));
-          progressBarRef.current.max = seconds;
-        }
-    }, 300)
-  } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState ]);
+  // useEffect(() => {
+  //   const seconds = Math.round(audioRef?.current?.duration);
+  //   console.log("loadedmetadata ", audioRef?.current?.loadedmetadata)
+  //   setDuration(calculateTime(seconds));
+  //   progressBarRef.current.max = seconds;
+  // } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState ]);
 
   const calculateTime = (seconds) => {
     if(isNaN(seconds)) {
       return;
     }
-    
+
     const secsInt = parseInt(seconds);
     const minutes = Math.floor(secsInt / 60);
     const returnedMins = minutes > 9 ? `${minutes}` : `0${minutes}`;
@@ -146,7 +143,11 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
                 <span>{ calculateTime(currentTime) }</span>
                 <span>{ duration }</span>
             </div>
-            <audio  className='hidden' preload="metadata" ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } />
+            <audio  className='hidden' preload="metadata" ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } onLoadedMetadata={event => {
+              const seconds = Math.round(event?.target?.duration);
+              setDuration(calculateTime(seconds));
+              progressBarRef.current.max = seconds;
+            }} />
         </div>  
         </div>
   )
