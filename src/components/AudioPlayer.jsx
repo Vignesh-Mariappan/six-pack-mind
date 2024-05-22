@@ -141,7 +141,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
                 <span>{ calculateTime(currentTime) }</span>
                 <span>{ duration }</span>
             </div>
-            <audio  className='hidden' ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } />
+            <audio  className='hidden' preload="metadata" ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } />
         </div>  
         </div>
   )
