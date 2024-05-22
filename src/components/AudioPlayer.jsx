@@ -26,10 +26,10 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
       return;
     }
 
-    const secsInt = parseInt(seconds);
-    const minutes = Math.floor(secsInt / 60);
+    const secondsInt = parseInt(seconds);
+    const minutes = Math.round(secondsInt / 60);
     const returnedMins = minutes > 9 ? `${minutes}` : `0${minutes}`;
-    const secs = Math.floor(secsInt % 60); 
+    const secs = Math.round(secondsInt % 60); 
     const returnedSecs = secs > 9 ? `${secs}` : `0${secs}`;
     return `${returnedMins}:${returnedSecs}`
   }
@@ -97,7 +97,13 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
       setShowPlay(null);
     } else {
       setShowReplay(false);
-      setShowPlay(true)
+      setShowPlay(oldShowPlay => {
+        if(oldShowPlay === null) {
+          return true;
+        } else {
+          return oldShowPlay;
+        }
+      })
     }
   }
 
