@@ -4,7 +4,7 @@ import { AUDIOS } from "../assets/audios";
 
 const PickYourMeditation = () => {
   const [ selectedMeditation, setSelectedMeditation ] = useState(1);
-  const meditationTypeClasses = `p-4 sm:basis-1/3 lg:basis-0 text-center font-black flex-1 text-[16px] text-white rounded-md cursor-pointer`;
+  const meditationTypeClasses = `p-4 text-center font-semibold text-[14px] md:text-[14px] md:font-bold text-white rounded-md cursor-pointer`;
   const outlineClasses = `outline outline-primary outline-3 outline-offset-4`;
   const [ selectedMeditationAudios, setSelectedMeditationAudios ] = useState(AUDIOS["Well Being First"]);
   const [ currentPlayingAudioId, setCurrentPlayingAudioId ] = useState(null);
@@ -40,13 +40,13 @@ const PickYourMeditation = () => {
 
   return (
     <div className="w-full flex flex-col gap-2.5">
-        <h2 className="text-3xl font-black text-[#eab308] my-4">Pick a meditation</h2>
-        <div className="flex flex-col justify-center gap-3 items-stretch sm:flex-row text-nowrap flex-wrap" onClick={meditationTypeClickHandler}>
+        <h2 className="text-3xl font-normal text-[#eab308] my-4">Pick a meditation</h2>
+        <div className="grid grid-cols-2 lg:grid-cols-5 justify-center gap-3 items-stretch sm:min-w-[200px] text-nowrap" onClick={meditationTypeClickHandler}>
           <div className={`${meditationTypeClasses} ${ selectedMeditation === 1 && outlineClasses } bg-[#e11d48]`}>Well Being First</div>
           <div className={`${meditationTypeClasses} ${ selectedMeditation === 2 && outlineClasses } bg-[#0369a1]`}>No Big Deal</div>
           <div className={`${meditationTypeClasses} ${ selectedMeditation === 3 && outlineClasses } bg-[#2e1065]`}>No Fake Needs</div>
           <div className={`${meditationTypeClasses} ${ selectedMeditation === 4 && outlineClasses } bg-[#4a044e]`}>Avoid Limiting Habits</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 5 && outlineClasses } bg-[#ea580c]`} /* className="p-4 text-white font-black flex-1 outline outline-primary outline-3 outline-offset-4 text-[16px]  rounded-md bg-[#ea580c] cursor-pointer" */>Severely Blessed</div>
+          <div className={`${meditationTypeClasses} ${ selectedMeditation === 5 && outlineClasses } col-span-2 md:col-span-1 bg-[#ea580c]`} /* className="p-4 text-white font-black flex-1 outline outline-primary outline-3 outline-offset-4 text-[16px]  rounded-md bg-[#ea580c] cursor-pointer" */>Severely Blessed</div>
         </div>
 
         <div className="flex flex-col items-center gap-5 my-4">
