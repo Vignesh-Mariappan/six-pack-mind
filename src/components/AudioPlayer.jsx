@@ -21,13 +21,6 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
     }
   }, [id, currentPlayingAudioId])
 
-  // useEffect(() => {
-  //   const seconds = Math.round(audioRef?.current?.duration);
-  //   console.log("loadedmetadata ", audioRef?.current?.loadedmetadata)
-  //   setDuration(calculateTime(seconds));
-  //   progressBarRef.current.max = seconds;
-  // } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState ]);
-
   const calculateTime = (seconds) => {
     if(isNaN(seconds)) {
       return;
@@ -101,7 +94,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
     setCurrentTime(progressBarRef.current.value);
     if(calculateTime(progressBarRef.current.value) === duration) {
       setShowReplay(true);
-      // setShowPlay(null);
+      setShowPlay(null);
     } else {
       setShowReplay(false);
       setShowPlay(true)
