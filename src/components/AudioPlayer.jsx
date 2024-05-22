@@ -30,10 +30,10 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
   } ,[ audioRef?.current?.loadedmetadata, audioRef?.current?.readyState ]);
 
   const calculateTime = (seconds) => {
-    
-    const minutes = Math.floor(seconds / 60);
+    const secsInt = parseInt(seconds);
+    const minutes = Math.floor(secsInt / 60);
     const returnedMins = minutes > 9 ? `${minutes}` : `0${minutes}`;
-    const secs = Math.floor(seconds % 60); 
+    const secs = Math.floor(secsInt % 60); 
     const returnedSecs = secs > 9 ? `${secs}` : `0${secs}`;
 
     return `${returnedMins}:${returnedSecs}`
