@@ -14,6 +14,6 @@ export default {
     daisyui,
   ],
   daisyui: {
-    themes: ["night", "luxury", "coffee", "synthwave", "business"],
+    themes: ["night", "coffee", "synthwave"],
   },
 }

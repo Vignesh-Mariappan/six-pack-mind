@@ -5,7 +5,7 @@ import HomePage from './components/HomePage'
 function App() {
 
   useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", ["night", "luxury", "coffee", "synthwave", "business"][Math.floor(Math.random() * 5)])
+    document.querySelector("html").setAttribute("data-theme", ["night", "coffee", "synthwave"][Math.floor(Math.random() * 3)])
   }, [])
 
   return (
