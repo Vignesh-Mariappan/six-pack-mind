@@ -139,7 +139,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
             <input ref={progressBarRef} type="range" defaultValue={"0"} className="range range-xs" onChange={changeRange} />
             <div className="flex justify-between items-center">
                 <span>{ calculateTime(currentTime) }</span>
-                <span>{ isNaN(duration) ? duration : "--:--" }</span>
+                <span>{ duration && !isNaN(duration) && duration }</span>
             </div>
             <audio  className='hidden' ref={audioRef} muted={muted} onEnded={onAudioEnded} controls src={ audioPath } />
         </div>  
