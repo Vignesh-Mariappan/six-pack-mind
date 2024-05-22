@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaPause, FaPlay, FaVolumeHigh, FaVolumeXmark } from "react-icons/fa6";
 import { MdOutlineReplay } from "react-icons/md";
-import meditation from "../assets/meditation.jpeg";
 
-const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioId, setCurrentPlayingAudioId}) => {
+const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioId, setCurrentPlayingAudioId, imgSrc }) => {
   const audioRef = useRef(null);
   const progressBarRef = useRef(null);
   const animationRef = useRef(null);
@@ -109,7 +108,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
 
   return (
     <div className="card w-[345px] md:w-[600px] md:card-side bg-neutral shadow-xl max-w-[600px]">
-        <figure className='md:min-w-[200px]'><img className="w-[300px] mt-6 md:mt-0 md:w-[200px] h-[100%]" src={meditation} alt="Meditation"/></figure>
+        <figure className='md:min-w-[200px]'><img className="w-[300px] mt-6 md:mt-0 md:w-[200px] h-[100%]" src={imgSrc} alt="Meditation"/></figure>
         <div className="card-body p-4 md:p-8">
             <h2 className="card-title text-wrap">{ audioTitle }</h2>
             <div className="flex relative items-center justify-start gap-2">

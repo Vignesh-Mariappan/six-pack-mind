@@ -1,3 +1,10 @@
+/* Meditation images */ 
+import WellBeingImg from "./images/well-being.jpeg";
+import NoBigDealImg from "./images/no-big-deal.jpeg";
+import NoFakeNeedsImg from "./images/no-fake-needs.jpeg";
+import AvoidLimitingHabitsImg from "./images/avoid-limiting-habits.jpeg";
+import SeverelyBlessedImg from "./images/severely-blessed.jpeg";
+
 /* Well being first */
 import WellBeingFirstOne from "./audios/Well_being_first/1-Ready_to_lose_getting_and_doing_but_not_being.mp3";
 import WellBeingFirstTwo from "./audios/Well_being_first/2-Well_being_before_closed_ones.mp3";
@@ -38,93 +45,108 @@ export const AUDIOS = {
         {
             id: "WB01",
             audioTitle: "Ready to lose getting and doing but not being",
-            audioPath: WellBeingFirstOne
+            audioPath: WellBeingFirstOne,
+            imgSrc: WellBeingImg
         },
 
         {
             id: "WB02",
             audioTitle: "Well being before closed ones",
-            audioPath: WellBeingFirstTwo
+            audioPath: WellBeingFirstTwo,
+            imgSrc: WellBeingImg
         },
 
         {
             id: "WB03",
             audioTitle: "Success due to well being",
-            audioPath: WellBeingFirstThree
+            audioPath: WellBeingFirstThree,
+            imgSrc: WellBeingImg
         },
 
         {
             id: "WB04",
             audioTitle: "Well being gives me top performance",
-            audioPath: WellBeingFirstFour
+            audioPath: WellBeingFirstFour,
+            imgSrc: WellBeingImg
         },
 
         {
             id: "WB05",
             audioTitle: "Balance bhava tough conversations made easy",
-            audioPath: WellBeingFirstFive
+            audioPath: WellBeingFirstFive,
+            imgSrc: WellBeingImg
         },
     ],
     "No Fake Needs": [
         {
             id: "NFN01",
             audioTitle: "I'll release myself from jail",
-            audioPath: NoFakeNeedsOne
+            audioPath: NoFakeNeedsOne,
+            imgSrc: NoFakeNeedsImg
         },
 
         {
             id: "NFN02",
             audioTitle: "All expectations are extras",
-            audioPath: NoFakeNeedsTwo
+            audioPath: NoFakeNeedsTwo,
+            imgSrc: NoFakeNeedsImg
         },
 
         {
             id: "NFN03",
             audioTitle: "I reject all marketing and being particular",
-            audioPath: NoFakeNeedsThree
+            audioPath: NoFakeNeedsThree,
+            imgSrc: NoFakeNeedsImg
         },
 
         {
             id: "NFN04",
             audioTitle: "I will not universalize like a baby elephant",
-            audioPath: NoFakeNeedsFour
+            audioPath: NoFakeNeedsFour,
+            imgSrc: NoFakeNeedsImg
         },
 
         {
             id: "NFN05",
             audioTitle: "I'll playfully break 2mm everyday",
-            audioPath: NoFakeNeedsFive
+            audioPath: NoFakeNeedsFive,
+            imgSrc: NoFakeNeedsImg
         },
     ],
     "No Big Deal": [
         {
             id: "NBD01",
             audioTitle: "Black hole shrinking no big deal",
-            audioPath: NoBigDealOne
+            audioPath: NoBigDealOne,
+            imgSrc: NoBigDealImg
         },
 
         {
             id: "NBD02",
             audioTitle: "I accept life's plan for me",
-            audioPath: NoBigDealTwo
+            audioPath: NoBigDealTwo,
+            imgSrc: NoBigDealImg
         },
 
         {
             id: "NBD03",
             audioTitle: "I'll be the gentle judge and accept them for who they are",
-            audioPath: NoBigDealThree
+            audioPath: NoBigDealThree,
+            imgSrc: NoBigDealImg
         },
 
         {
             id: "NBD04",
             audioTitle: "I release the dead person's weight",
-            audioPath: NoBigDealFour
+            audioPath: NoBigDealFour,
+            imgSrc: NoBigDealImg
         },
 
         {
             id: "NBD05",
             audioTitle: "I'm not a fool, I was asleep in my situations",
-            audioPath: NoBigDealFive
+            audioPath: NoBigDealFive,
+            imgSrc: NoBigDealImg
         },
     ],
 
@@ -132,56 +154,65 @@ export const AUDIOS = {
         {
             id: "AVH01",
             audioTitle: "True story is not exciting and I won't let the river dry",
-            audioPath: AvoidLimitingHabitsOne
+            audioPath: AvoidLimitingHabitsOne,
+            imgSrc: AvoidLimitingHabitsImg
         },
 
         {
             id: "AVH02",
             audioTitle: "I'll make true story choice like a child",
-            audioPath: AvoidLimitingHabitsTwo
+            audioPath: AvoidLimitingHabitsTwo,
+            imgSrc: AvoidLimitingHabitsImg
         },
 
         {
             id: "AVH03",
             audioTitle: "I acknowledge the ocean of mercy",
-            audioPath: AvoidLimitingHabitsThree
+            audioPath: AvoidLimitingHabitsThree,
+            imgSrc: AvoidLimitingHabitsImg
         },
 
         {
             id: "AVH04",
             audioTitle: "I'm significantly thankful",
-            audioPath: AvoidLimitingHabitsFour
+            audioPath: AvoidLimitingHabitsFour,
+            imgSrc: AvoidLimitingHabitsImg
         },
 
         {
             id: "AVH05",
             audioTitle: "Life will work out and I'll focus on ocean of blessings",
-            audioPath: AvoidLimitingHabitsFive
+            audioPath: AvoidLimitingHabitsFive,
+            imgSrc: AvoidLimitingHabitsImg
         },
     ],
     "Severely Blessed": [
         {
             id: "SB01",
             audioTitle: "My Setbacks are my blessings",
-            audioPath: SeverelyBlessedOne
+            audioPath: SeverelyBlessedOne,
+            imgSrc: SeverelyBlessedImg
         },
 
         {
             id: "SB02",
             audioTitle: "There is no wave, there is only ocean",
-            audioPath: SeverelyBlessedTwo
+            audioPath: SeverelyBlessedTwo,
+            imgSrc: SeverelyBlessedImg
         },
 
         {
             id: "SB03",
             audioTitle: "I will treat everything like a bonus",
-            audioPath: SeverelyBlessedThree
+            audioPath: SeverelyBlessedThree,
+            imgSrc: SeverelyBlessedImg
         },
 
         {
             id: "SB04",
             audioTitle: "I learn during bad times and I progress during good times",
-            audioPath: SeverelyBlessedFour
+            audioPath: SeverelyBlessedFour,
+            imgSrc: SeverelyBlessedImg
         },
 
         // {
