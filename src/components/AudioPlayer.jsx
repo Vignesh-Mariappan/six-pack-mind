@@ -35,7 +35,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
     const returnedMins = minutes > 9 ? `${minutes}` : `0${minutes}`;
     const secs = Math.floor(secsInt % 60); 
     const returnedSecs = secs > 9 ? `${secs}` : `0${secs}`;
-
+    console.log("seconds ", seconds); 
     return `${returnedMins}:${returnedSecs}`
   }
 
