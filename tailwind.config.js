@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import daisyui from "daisyui";
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
   content: [
@@ -8,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '400px',
+      },
+      fontFamily: {
+        "open-sans": ['"Open Sans"', ...defaultTheme.fontFamily.sans]
+      }
     },
   },
   plugins: [ 

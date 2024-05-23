@@ -18,7 +18,6 @@ function App() {
     const interval = setInterval(() => {
       progressRef.current += 5;
       setProgressWidth(progressRef.current)
-      console.log("progress ", progressRef.current)
 
       if(progressRef.current >= 100) {
         clearInterval(interval)

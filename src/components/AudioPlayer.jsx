@@ -107,10 +107,10 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
   }
 
   return (
-    <div className="card w-[345px] md:w-[600px] md:card-side bg-neutral shadow-xl max-w-[600px] animate__animated animate__fadeIn animate__slow">
-        <figure className='md:min-w-[200px]'><img className="w-[300px] mt-6 md:mt-0 md:w-[200px] h-[100%]" src={imgSrc} alt="Meditation"/></figure>
+    <div className="card w-[345px] max-[345px]:w-[300px] md:w-[600px] md:card-side bg-neutral shadow-xl max-w-[600px] animate__animated animate__fadeIn animate__slow">
+        <figure className='md:min-w-[200px] card-figure'><img className="w-[300px] mt-6 md:mt-0 md:w-[200px] h-[100%]" src={imgSrc} alt="Meditation"/></figure>
         <div className="card-body p-4 md:p-8">
-            <h2 className="card-title text-wrap">{ audioTitle }</h2>
+            <h2 className="card-title text-wrap font-normal md:font-semibold">{ audioTitle }</h2>
             <div className="flex relative items-center justify-start gap-2">
                 <button className="btn btn-circle btn-outline" onClick={audioPlayControl}>
                 {

@@ -5,8 +5,8 @@ import 'animate.css';
 
 const HomePage = () => {
   return (
-    <div className='w-full max-w-[1440px] mx-auto px-4'>
-      <div className="bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInDown" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
+    <div className='w-full max-w-[1440px] mx-auto px-4 font-open-sans'>
+      <div className="bg-no-repeat bg-contain mx-auto md:mx-0 bg-center w-[150px] h-[150px] animate__animated animate__backInDown" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
 
       <PickYourMeditation />
     </div>

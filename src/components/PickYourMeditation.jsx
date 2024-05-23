@@ -6,7 +6,7 @@ import 'animate.css';
 
 const PickYourMeditation = () => {
   const [ selectedMeditation, setSelectedMeditation ] = useState(1);
-  const meditationTypeClasses = `p-4 text-center font-semibold text-[14px] md:text-[14px] md:font-bold text-white rounded-md cursor-pointer`;
+  const meditationTypeClasses = `p-4 text-center font-semibold max-[375px]:text-[10px] text-[14px] md:font-bold text-white rounded-md cursor-pointer`;
   const outlineClasses = `outline outline-primary outline-3 outline-offset-4`;
   const [ selectedMeditationAudios, setSelectedMeditationAudios ] = useState(AUDIOS["Well Being First"]);
   const [ currentPlayingAudioId, setCurrentPlayingAudioId ] = useState(null);
@@ -41,7 +41,7 @@ const PickYourMeditation = () => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-2.5">
+    <div className="w-full flex flex-col gap-2.5 mb-8">
         {/* <h2 className="text-3xl font-normal text-[#eab308] my-4">Pick a meditation</h2> */}
         <div className="grid grid-cols-2 lg:grid-cols-5 justify-center gap-3 items-stretch sm:min-w-[200px] text-nowrap animate__animated animate__fadeIn animate__slow" onClick={meditationTypeClickHandler}>
           <div className={`${meditationTypeClasses} ${ selectedMeditation === 1 && outlineClasses } bg-[#e11d48]`}>Well Being First</div>
