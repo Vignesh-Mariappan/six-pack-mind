@@ -1,12 +1,12 @@
-import React from 'react'
-import PickYourMeditation from './PickYourMeditation'
+import PickYourMeditation from './PickYourMeditation';
+import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
+
+import 'animate.css';
 
 const HomePage = () => {
   return (
     <div className='w-full max-w-[1440px] mx-auto px-4'>
-      <h1 className="text-3xl font-normal md:text-4xl md:font-semibold py-4 text-primary text-center">
-        Six Pack Mind
-      </h1>
+      <div className="bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInDown" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
 
       <PickYourMeditation />
     </div>
