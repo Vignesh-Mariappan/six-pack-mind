@@ -35,7 +35,6 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
   }
 
   const whilePlaying = () => {
-    // console.log("audioRef.current.currentTime ", audioRef.current.currentTime)
     progressBarRef.current.value = audioRef.current.currentTime;
     setCurrentTime(progressBarRef.current.value);
     animationRef.current = requestAnimationFrame(whilePlaying)
@@ -92,7 +91,7 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
   const changeRange = () => {
     audioRef.current.currentTime = progressBarRef.current.value;
     setCurrentTime(progressBarRef.current.value);
-    if(calculateTime(progressBarRef.current.value) === duration) {
+    if(calculateTime(progressBarRef.current.value) >= duration) {
       setShowReplay(true);
       setShowPlay(null);
     } else {
