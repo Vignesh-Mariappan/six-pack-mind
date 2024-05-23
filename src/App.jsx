@@ -26,7 +26,7 @@ function App() {
           setIsLoading(false);
         }, 100)
       }
-    }, 25);
+    }, 50);
 
   }, [])
 
