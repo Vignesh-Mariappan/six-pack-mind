@@ -6,7 +6,7 @@ import 'animate.css';
 
 const PickYourMeditation = () => {
   const [ selectedMeditation, setSelectedMeditation ] = useState(1);
-  const meditationTypeClasses = `p-4 text-center font-semibold max-[335px]:text-[9px] max-[385px]:text-[11px] text-[13px] md:font-bold text-white rounded-md cursor-pointer`;
+  const meditationTypeClasses = `p-4 text-center max-[335px]:text-[9px] max-[385px]:text-[11px] text-[13px] lg:font-bold text-white rounded-md cursor-pointer`;
   const outlineClasses = `outline outline-primary outline-3 outline-offset-4`;
   const [ selectedMeditationAudios, setSelectedMeditationAudios ] = useState(AUDIOS["Well Being First"]);
   const [ currentPlayingAudioId, setCurrentPlayingAudioId ] = useState(null);
