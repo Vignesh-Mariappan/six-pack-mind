@@ -10,10 +10,6 @@ function App() {
   progressRef.current = progressWidth;
 
   useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", ["night", "coffee", "synthwave"][Math.floor(Math.random() * 3)])
-  }, []);
-
-  useEffect(() => {
     setIsLoading(true);
     const interval = setInterval(() => {
       progressRef.current += 5;
