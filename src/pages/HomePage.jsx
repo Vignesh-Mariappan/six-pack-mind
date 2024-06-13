@@ -1,4 +1,4 @@
-import PickYourMeditation from './PickYourMeditation';
+import PickYourMeditation from '../components/PickYourMeditation';
 import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
 
 import 'animate.css';
