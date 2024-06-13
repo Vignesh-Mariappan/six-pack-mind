@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import HomePage from './components/HomePage'
-import LoadingPage from './components/LoadingPage';
+import HomePage from './pages/HomePage'
+import LoadingPage from './pages/LoadingPage';
 
 function App() {
   const [ isLoading, setIsLoading ] = useState(true);
