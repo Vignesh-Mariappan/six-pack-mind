@@ -9,7 +9,7 @@ const ProtectedRoutes = () => {
 
   return (
     !user ? (
-      <Navigate to='/six-pack-mind/login' />
+      <Navigate to='/six-pack-mind/login/' />
     ) : (
       <Layout />
     )
