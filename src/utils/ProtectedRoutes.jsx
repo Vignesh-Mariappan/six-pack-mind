@@ -1,15 +1,17 @@
 import { Navigate } from "react-router-dom";
 import Layout from "./Layout";
 
-const ProtectedRoutes = () => {
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/config";
 
-  let isUserAuthenticated = true;
+const ProtectedRoutes = () => {
+  const [ user ] = useAuthState(auth);
 
   return (
-    !isUserAuthenticated ? (
-        <Navigate to='/login' />
+    !user ? (
+      <Navigate to='/six-pack-mind/login' />
     ) : (
-        <Layout />
+      <Layout />
     )
   )
 }
