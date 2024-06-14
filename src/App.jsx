@@ -39,10 +39,10 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route element={<ProtectedRoutes />}>
-            <Route path="/six-pack-mind" element={<HomePage />} />
-            <Route path='/six-pack-mind/blessed-consciousness' element={<BlessedConsciousnessPage />} />
+            <Route path="/six-pack-mind/" element={<HomePage />} />
+            <Route path='/six-pack-mind/blessed-consciousness/' element={<BlessedConsciousnessPage />} />
           </Route>
-          <Route path="/six-pack-mind/login" element={<LoginPage />} />
+          <Route path="/six-pack-mind/login/" element={<LoginPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

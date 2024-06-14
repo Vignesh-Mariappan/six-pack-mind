@@ -5,16 +5,17 @@ import MeditationLoginImg from '../assets/images/meditation-login.png';
 import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
 
 // firebase imports for google authentication
+import { signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { auth, firestoreDB } from '../firebase/config';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth, firestoreDB, googleProvider } from '../firebase/config';
 
 const LoginPage = () => {
-  const [ googleSignIn, user ] = useSignInWithGoogle(auth);
+  const [ user ] = useAuthState(auth);
 
   const signInWithGoogle = async () => {
     try {
-      const signedInUser = await googleSignIn();
+      const signedInUser = await signInWithPopup(auth, googleProvider);
       const userRef = doc(firestoreDB, 'users', signedInUser?.user?.displayName);
       await setDoc(userRef, {
         email: signedInUser?.user.email,
@@ -34,7 +35,7 @@ const LoginPage = () => {
   }
 
   if (user) {
-    return <Navigate to='/six-pack-mind' />
+    return <Navigate to='/six-pack-mind/' />
   }
 
   return (
@@ -50,6 +51,8 @@ const LoginPage = () => {
       <div className="w-[100%] md:w-[50%] bg-neutral md:bg-white">
         <div className="flex h-full flex-col items-center justify-center gap-3">
           <div className="fixed top-3 right-3 bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInRight" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
+          {/* <h1 className="text-4xl text-left font-bold text-accent">Peaceful mind throughout the day!!</h1>
+          <h3 className="text-3xl text-success font-semibold">Your everyday mental health app!</h3> */}
           <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
           <h4 className="text-xl flex items-center justify-center gap-2 max-[360px]:hidden font-normal text-primary md:text-black animate__animated animate__fadeIn ">
             <span>Peaceful mind throughout the day!!</span>
