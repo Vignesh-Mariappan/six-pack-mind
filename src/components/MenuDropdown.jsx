@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { GiMeditation } from "react-icons/gi";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
+import { auth } from "../firebase/config";
 
 const MenuDropdown = () => {
     const menuDropdownRef = useRef(null);
@@ -19,8 +21,10 @@ const MenuDropdown = () => {
     }
 
     const closeMenu = (event) => {
-        if(event.target.textContent === 'Meditation' && isMeditation ||
-        event.target.textContent === 'Blessed Consciousness' && isBlessedConsciousness) {
+
+      if(event.target.textContent === 'Meditation' && isMeditation ||
+        event.target.textContent === 'Blessed Consciousness' && isBlessedConsciousness
+      ) {
             return;
         }
 
@@ -36,6 +40,10 @@ const MenuDropdown = () => {
             overlayRef.current.style.zIndex = '-1'
         }
     }
+
+  const logoutUser = () => {
+    auth && auth.signOut();
+  }
 
   return (
     <>
@@ -60,6 +68,13 @@ const MenuDropdown = () => {
                 </button>
               </li>
             </Link>
+            <div className="divider my-0"></div>
+            <li>
+              <button className={`p-2`} onClick={logoutUser}>
+                <RiLogoutBoxRLine className="text-error" />
+                <span className={ 'font-semibold text-error' }>Logout</span>  
+              </button>
+            </li>
           </ul>
         </details>
         <div className={`fixed top-0 left-0 bottom-0 right-0`} ref={overlayRef} onClick={overlayClick}></div>
