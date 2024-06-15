@@ -5,5 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: 'https://Vignesh-Mariappan.github.io/six-pack-mind/',
-  relativeUrls: true
-})
+});
