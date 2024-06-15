@@ -54,7 +54,7 @@ const LoginPage = () => {
           {/* <h1 className="text-4xl text-left font-bold text-accent">Peaceful mind throughout the day!!</h1>
           <h3 className="text-3xl text-success font-semibold">Your everyday mental health app!</h3> */}
           <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
-          <h4 className="text-xl flex items-center justify-center gap-2 max-[360px]:hidden font-normal text-primary md:text-black animate__animated animate__fadeIn ">
+          <h4 className="text-xl flex items-center justify-center gap-2 md:hidden max-[360px]:hidden font-normal text-primary md:text-black animate__animated animate__fadeIn ">
             <span>Peaceful mind throughout the day!!</span>
             <RiMentalHealthFill className="text-accent block max-[360px]:hidden" />
           </h4>
