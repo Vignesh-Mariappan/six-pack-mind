@@ -2,32 +2,39 @@ import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 const ThemeSwitcherDropdown = () => {
-    const [ currentTheme, setCurrentTheme ] = useState('synthwave');
+    const [ currentTheme, setCurrentTheme ] = useState(JSON.parse(localStorage.getItem('appTheme')));
 
   useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", currentTheme ?? 'synthwave');
+    document.querySelector("html").setAttribute("data-theme", currentTheme || 'synthwave');
   }, [ currentTheme ])
 
   const themeSwitcher = (event) => {
     const selectedTheme = event.target.textContent.trim().toLowerCase();
 
+    let appTheme = 'synthwave';
+
     switch (selectedTheme) {
       case 'night':
-        setCurrentTheme('night');
+        appTheme = 'night';
         break;
       case 'coffee':
-        setCurrentTheme('coffee');
+        appTheme = 'coffee';
         break;
       case 'synthwave':
-        setCurrentTheme('synthwave');
+        appTheme = 'synthwave';
         break;
       case 'forest':
-        setCurrentTheme('forest');
+        appTheme = 'forest';
         break;
       default: 
-        setCurrentTheme('synthwave');
+        appTheme = 'synthwave';
         break;
     }
+
+    setCurrentTheme(appTheme);
+
+    // setting the current theme in localStorage
+    localStorage.setItem('appTheme', JSON.stringify(appTheme)); 
   }
 
   const isNight = currentTheme.toLowerCase() === 'night';
@@ -36,7 +43,7 @@ const ThemeSwitcherDropdown = () => {
   const isForest = currentTheme.toLowerCase() === 'forest';
   return (
     <div className="dropdown dropdown-bottom dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-neutral m-1">
+          <div tabIndex={0} role="button" className="btn btn-ghost m-1">
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="h-5 w-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
           </div>
 

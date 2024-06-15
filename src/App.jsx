@@ -15,6 +15,15 @@ function App() {
   progressRef.current = progressWidth;
 
   useEffect(() => {
+    const appTheme = localStorage.getItem('appTheme');
+    if(appTheme) {
+      document.querySelector("html").setAttribute("data-theme", JSON.parse(appTheme));
+    } else {
+      document.querySelector("html").setAttribute("data-theme", "synthwave");
+    }
+  }, [])
+
+  useEffect(() => {
     setIsLoading(true);
     const interval = setInterval(() => {
       progressRef.current += 5;
