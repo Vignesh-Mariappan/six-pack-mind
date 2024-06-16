@@ -64,7 +64,7 @@ const PickYourMeditationDropdown = ({ selectedMeditation, setSelectedMeditation,
       }
 
   return (
-    <div className="dropdown">
+    <div className="dropdown animate__animated animate__fadeIn">
         <div tabIndex={0} role="button" className="btn btn-accent m-1">
         <span>{ findMeditationType() }</span>
         <span><FaChevronDown /></span>
