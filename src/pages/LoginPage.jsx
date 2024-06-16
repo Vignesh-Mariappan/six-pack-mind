@@ -6,7 +6,7 @@ import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
 
 // firebase imports for google authentication
 import { signInWithPopup } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, firestoreDB, googleProvider } from '../firebase/config';
 
@@ -17,18 +17,21 @@ const LoginPage = () => {
     try {
       const signedInUser = await signInWithPopup(auth, googleProvider);
       const userRef = doc(firestoreDB, 'users', signedInUser?.user?.displayName);
-      await setDoc(userRef, {
-        email: signedInUser?.user.email,
-        displayName: signedInUser?.user.displayName,
-        activities: [
-          { 'Date with breath': [] },
-          { 'Date with body': [] },
-          { 'Date with food': [] },
-          { 'Hourly breaths': [] },
-          { 'Count blessings': [] },
-          { 'Tough things': [] },
-        ]
-      });
+      const userSnap = await getDoc(userRef);
+      if (!userSnap.exists()) {
+        await setDoc(userRef, {
+          email: signedInUser?.user.email,
+          displayName: signedInUser?.user.displayName,
+          activities: [
+            { 'Date with breath': [] },
+            { 'Date with body': [] },
+            { 'Date with food': [] },
+            { 'Hourly breaths': [] },
+            { 'Count blessings': [] },
+            { 'Tough things': [] },
+          ]
+        });
+      }
     } catch (err) {
       console.error('Error signing in with google ', err);
     }
@@ -39,20 +42,18 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="w-[100vw] h-[100vh] flex">
+    <div className="w-[100vw] h-[100vh] flex font-open-sans">
       <div className="hidden md:w-[50%] md:flex md:flex-col md:items-center md:justify-center md:gap-3">
         <div className="bg-no-repeat bg-contain bg-center w-[400px] h-[400px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
-        <h1 className="text-3xl max-[950px]:text-xl max-[1100px]:text-2xl font-normal text-primary animate__animated animate__fadeIn flex gap-2">
+        <h1 className="text-3xl max-[950px]:text-xl max-[1100px]:text-2xl font-normal text-primary animate__animated animate__fadeIn flex items-center justify-center gap-2">
           <span>Peaceful mind throughout the day!!</span>
           <RiMentalHealthFill className="text-accent" />
         </h1>
         <h3 className="text-2xl max-[950px]:text-lg max-[1100px]:text-base text-secondary font-normal animate__animated animate__fadeInUp">Your everyday mental health app!</h3>
       </div>
-      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-white">
+      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-[#d4d4d4]">
         <div className="flex h-full flex-col items-center justify-center gap-3">
           <div className="fixed top-3 right-3 bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInRight" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
-          {/* <h1 className="text-4xl text-left font-bold text-accent">Peaceful mind throughout the day!!</h1>
-          <h3 className="text-3xl text-success font-semibold">Your everyday mental health app!</h3> */}
           <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
           <h4 className="text-xl flex items-center justify-center gap-2 md:hidden max-[360px]:hidden font-normal text-primary md:text-black animate__animated animate__fadeIn ">
             <span>Peaceful mind throughout the day!!</span>
