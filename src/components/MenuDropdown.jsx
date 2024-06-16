@@ -11,7 +11,7 @@ const MenuDropdown = () => {
     const location = useLocation();
     const { pathname} = location;
 
-    const isMeditation = pathname === '/six-pack-mind/';
+    const isMeditation = pathname === '/';
     const isBlessedConsciousness = pathname.includes('/blessed-consciousness/');
 
     const menuOpened = () => {
@@ -52,7 +52,7 @@ const MenuDropdown = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
           </summary>
           <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-64" onClick={closeMenu}>
-            <Link to='/six-pack-mind/'>
+            <Link to='/'>
               <li className="mb-2">
                 <button className={`p-2 ${isMeditation && 'bg-base-200'}`}>
                   <GiMeditation className={isMeditation && 'text-secondary' } />
@@ -60,7 +60,7 @@ const MenuDropdown = () => {
                 </button>
               </li>
             </Link>
-            <Link to='/six-pack-mind/blessed-consciousness/'>
+            <Link to='/blessed-consciousness/'>
               <li className="mb-2">
                 <button className={`p-2 ${isBlessedConsciousness && 'bg-base-200'}`}>
                   <FaHandHoldingHeart className={isBlessedConsciousness && 'text-secondary' } />

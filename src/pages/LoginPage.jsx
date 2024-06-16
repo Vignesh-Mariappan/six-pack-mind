@@ -38,7 +38,7 @@ const LoginPage = () => {
   }
 
   if (user) {
-    return <Navigate to='/six-pack-mind/' />
+    return <Navigate to='/' />
   }
 
   return (
