@@ -6,6 +6,9 @@ import useFetchCurrentUserDoc from "../hooks/useFetchCurrentUserDoc";
 import DatePicker from "../components/DatePicker";
 import ActivitiyTracking from "../components/ActivityTracking/ActivitiyTracking";
 
+import useSound from 'use-sound';
+import dingSound from '../assets/audios/Ending_sounds/ding.mp3';
+
 const BlessedConsciousnessPage = () => {
 
   const [ user ] = useAuthState(auth);
@@ -19,6 +22,8 @@ const BlessedConsciousnessPage = () => {
   const [ isHourlyBreathsMarked, setIsHourlyBreathsMarked ] = useState(false);
   const [ isCountBlessingsMarked, setIsCountBlessingsMarked ] = useState(false);
   const [ isToughThingsMarked, setIsToughThingsMarked ] = useState(false);
+
+  const [ playDing ] = useSound(dingSound)
 
   useEffect(() => {
     const userActivities = userDoc?.activities;
@@ -63,6 +68,7 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsDateWithBreathMarked(true);
+            playDing();
           }
           break;
 
@@ -79,6 +85,7 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsDateWithBodyMarked(true);
+            playDing();
           }
           break;
 
@@ -95,6 +102,7 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsDateWithFoodMarked(true);
+            playDing();
           }
           break;
 
@@ -111,6 +119,7 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsHourlyBreathsMarked(true);
+            playDing();
           }
           break;
 
@@ -127,6 +136,7 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsCountBlessingsMarked(true);
+            playDing();
           }
           break;
 
@@ -143,10 +153,12 @@ const BlessedConsciousnessPage = () => {
               activities: userActivities
             });
             setIsToughThingsMarked(true);
+            playDing();
           }
           break;
 
         default:
+          break;
       }
     }
   }
