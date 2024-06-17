@@ -10,7 +10,7 @@ const ActivitiyTracking = () => {
 
   return (
     <div className="my-6 flex flex-col items-center gap-8 animate__animated animate__fadeInUp animate__delay-1s">
-      <h4 className="font-open-sans text-center text-xl text-accent">Last 7 days activities</h4>
+      <h4 className="font-open-sans text-center text-xl text-accent">Last 7 days activity tracking</h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
           {
