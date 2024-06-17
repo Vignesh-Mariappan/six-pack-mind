@@ -63,7 +63,7 @@ const PickYourMeditationDropdown = ({ selectedMeditation, setSelectedMeditation,
         dropdownEl && dropdownEl.blur();
       }
 
-    const dropdownMenuOptionBtnActiveClass = 'bg-slate-800 hover:bg-slate-800 rounded-md';
+    const dropdownMenuOptionBtnActiveClass = 'bg-primary hover:bg-primary text-primary-content rounded-md';
 
   return (
     <div className="dropdown animate__animated animate__fadeIn z-10">
