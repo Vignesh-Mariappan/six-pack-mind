@@ -13,7 +13,7 @@ const Layout = () => {
   const [ user ] = useAuthState(auth);
 
   return (
-    <div className='w-full h-full max-w-[1440px] mx-auto px-4 font-open-sans'>
+    <div className='w-full h-full max-w-[1440px] mx-auto px-4 max-[325px]:px-1 font-open-sans'>
       <div className="flex items-center gap-2">
 
         <div className="mr-auto bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInDown" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
