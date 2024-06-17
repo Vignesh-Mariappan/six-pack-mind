@@ -63,6 +63,8 @@ const PickYourMeditationDropdown = ({ selectedMeditation, setSelectedMeditation,
         dropdownEl && dropdownEl.blur();
       }
 
+    const dropdownMenuOptionBtnActiveClass = 'bg-slate-800 hover:bg-slate-800 rounded-md';
+
   return (
     <div className="dropdown animate__animated animate__fadeIn z-10">
         <div tabIndex={0} role="button" className="btn btn-accent m-1">
@@ -70,13 +72,13 @@ const PickYourMeditationDropdown = ({ selectedMeditation, setSelectedMeditation,
         <span><FaChevronDown /></span>
         </div>
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-slate-950 rounded-box w-auto" onClick={meditationTypeClickHandler}>
-        <li className="mb-2"><button>Well Being First</button></li>
-        <li className="mb-2"><button>Dehype/De-Link</button></li>
-        <li className="mb-2"><button>Fake Need Release</button></li>
-        <li className="mb-2"><button>Limiting Views & Habits</button></li>
-        <li className="mb-2"><button>Blessed Consciousness</button></li>
-        <li className="mb-2"><button>Blessed Consciousness Max</button></li>
-        <li className="mb-2"><button>Final Meditation</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 1 && dropdownMenuOptionBtnActiveClass}>Well Being First</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 2 && dropdownMenuOptionBtnActiveClass}>Dehype/De-Link</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 3 && dropdownMenuOptionBtnActiveClass}>Fake Need Release</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 4 && dropdownMenuOptionBtnActiveClass}>Limiting Views & Habits</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 5 && dropdownMenuOptionBtnActiveClass}>Blessed Consciousness</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 6 && dropdownMenuOptionBtnActiveClass}>Blessed Consciousness Max</button></li>
+        <li className="mb-2"><button className={ selectedMeditation === 7 && dropdownMenuOptionBtnActiveClass}>Final Meditation</button></li>
         </ul>
     </div>
   )
