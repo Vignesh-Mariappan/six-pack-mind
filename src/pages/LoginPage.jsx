@@ -1,7 +1,8 @@
 import { FcGoogle } from "react-icons/fc";
 import { RiMentalHealthFill } from "react-icons/ri";
 import { Navigate } from "react-router-dom";
-import MeditationLoginImg from '../assets/images/meditation-login.png';
+// import MeditationLoginImg from '../assets/images/meditation-login.png';
+import MeditationLoginImg from '../assets/images/wellness-practice.png';
 import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
 
 // firebase imports for google authentication
@@ -51,7 +52,7 @@ const LoginPage = () => {
         </h1>
         <h3 className="text-2xl max-[950px]:text-lg max-[1100px]:text-base text-secondary font-normal animate__animated animate__fadeInUp">Your everyday mental health app!</h3>
       </div>
-      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-[#d4d4d4]">
+      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-neutral">
         <div className="flex h-full flex-col items-center justify-center gap-3">
           <div className="fixed top-3 right-3 bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInRight" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
           <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
@@ -59,8 +60,8 @@ const LoginPage = () => {
             <span>Peaceful mind throughout the day!!</span>
             <RiMentalHealthFill className="text-accent block max-[360px]:hidden" />
           </h4>
-          <h3 className="text-lg text-secondary md:text-neutral font-semibold animate__animated animate__fadeIn">Log in</h3>
-          <button className="btn bg-white md:bg-transparent btn-outline border-2 hover:border-2 hover:border-black text-black btn-square btn-wide" onClick={ signInWithGoogle }>
+          <h3 className="text-lg text-secondary md:text-neutral-content font-semibold animate__animated animate__fadeIn">Log in</h3>
+          <button className="btn bg-white md:bg-white btn-outline border-2 hover:border-2 hover:border-black text-black btn-square btn-wide" onClick={ signInWithGoogle }>
             Continue with Google
             <FcGoogle size={'1.5rem'} />  
           </button>
