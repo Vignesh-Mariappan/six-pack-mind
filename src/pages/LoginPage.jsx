@@ -46,8 +46,8 @@ const LoginPage = () => {
   return (
     <div className="w-[100vw] h-[100vh] flex">
       <div className="hidden md:w-[50%] md:flex md:flex-col md:items-center md:justify-center md:gap-4 relative">
-        <div className="bg-no-repeat bg-contain bg-center w-[400px] h-[400px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
-        <PiStarFourFill className="absolute animate-pulse top-28 left-20 rotate-0 text-primary" size={'1.5rem'} />
+        <div className="bg-no-repeat bg-contain bg-center w-[400px] h-[400px] landscape:hidden animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
+        <PiStarFourFill className="absolute animate-pulse top-20 left-20 rotate-0 text-primary" size={'1.5rem'} />
         <PiStarFourFill className="absolute animate-pulse bottom-10 left-1/2 rotate-45 text-primary" size={'1.5rem'} />
         <PiStarFourFill className="absolute animate-pulse top-24 right-20 rotate-12 text-primary" size={'1.5rem'} />
         <RiBrainLine className="absolute top-12 left-1/2 text-secondary animate__animated animate__fadeInDown" size={'2.5rem'} />
@@ -64,7 +64,7 @@ const LoginPage = () => {
         <PiStarFourFill className="absolute md:hidden animate-pulse top-40 right-10 rotate-12 text-primary" size={'1.5rem'} />
         
           <div className="fixed top-3 right-3 bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInRight" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
-          <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
+          <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] landscape:hidden animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
           <h4 className="text-lg flex items-center justify-center gap-2 md:hidden max-[360px]:hidden font-normal text-primary animate__animated animate__fadeIn font-merri-weather transition-all">
             <span><span className="bg-accent text-accent-content p-1 rounded-sm"><strong>Peaceful mind</strong></span> throughout the day!!</span>
             <RiMentalHealthFill className="text-accent block max-[360px]:hidden" />
