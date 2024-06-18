@@ -44,7 +44,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="w-[100vw] h-[100vh] overflow-hidden flex">
+    <div className="w-[100] h-[100dvh] overflow-hidden flex">
       <div className="hidden md:w-[50%] md:flex md:flex-col md:items-center md:justify-center md:gap-4 relative">
         <div className="bg-no-repeat bg-contain bg-center w-[400px] h-[400px] login-img animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
         <PiStarFourFill className="absolute animate-pulse top-20 left-20 rotate-0 text-primary" size={'1.5rem'} />
