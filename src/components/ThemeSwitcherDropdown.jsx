@@ -39,8 +39,15 @@ const ThemeSwitcherDropdown = () => {
 
   const isNight = currentTheme?.toLowerCase() === 'night';
   const isCoffee = currentTheme?.toLowerCase() === 'coffee';
-  const isSynthwave = currentTheme?.toLowerCase() === 'synthwave';
+  let isSynthwave = currentTheme?.toLowerCase() === 'synthwave';
   const isForest = currentTheme?.toLowerCase() === 'forest';
+
+  // first time when the user logged in to the app
+  if(!currentTheme) {
+    isSynthwave = true;
+    localStorage.setItem('appTheme', 'synthwave');
+  }
+
   return (
     <div className="dropdown dropdown-bottom dropdown-end z-[997]">
           <div tabIndex={0} role="button" className="btn btn-ghost m-1">
