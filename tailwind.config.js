@@ -13,7 +13,8 @@ export default {
         'xs': '400px',
       },
       fontFamily: {
-        "open-sans": ['"Open Sans"', ...defaultTheme.fontFamily.sans]
+        "open-sans": ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+        'merri-weather': ['"Merriweather"', ...defaultTheme.fontFamily.serif]
       }
     },
   },

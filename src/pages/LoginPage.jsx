@@ -1,10 +1,11 @@
 import { FcGoogle } from "react-icons/fc";
 import { RiMentalHealthFill } from "react-icons/ri";
+import { PiStarFourFill } from "react-icons/pi";
 import { Navigate } from "react-router-dom";
 // import MeditationLoginImg from '../assets/images/meditation-login.png';
 import MeditationLoginImg from '../assets/images/wellness-practice.png';
 import SixPackMindLogo from "../assets/logo/six-pack-mind-transparent.png";
-
+import { RiBrainLine } from "react-icons/ri";
 // firebase imports for google authentication
 import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -43,21 +44,29 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="w-[100vw] h-[100vh] flex font-open-sans">
-      <div className="hidden md:w-[50%] md:flex md:flex-col md:items-center md:justify-center md:gap-3">
+    <div className="w-[100vw] h-[100vh] flex">
+      <div className="hidden md:w-[50%] md:flex md:flex-col md:items-center md:justify-center md:gap-4 relative">
         <div className="bg-no-repeat bg-contain bg-center w-[400px] h-[400px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
-        <h1 className="text-3xl max-[950px]:text-xl max-[1100px]:text-2xl font-normal text-primary animate__animated animate__fadeIn flex items-center justify-center gap-2">
-          <span>Peaceful mind throughout the day!!</span>
-          <RiMentalHealthFill className="text-accent" />
+        <PiStarFourFill className="absolute animate-pulse top-28 left-20 rotate-0 text-primary" size={'1.5rem'} />
+        <PiStarFourFill className="absolute animate-pulse bottom-10 left-1/2 rotate-45 text-primary" size={'1.5rem'} />
+        <PiStarFourFill className="absolute animate-pulse top-24 right-20 rotate-12 text-primary" size={'1.5rem'} />
+        <RiBrainLine className="absolute top-12 left-1/2 text-secondary animate__animated animate__fadeInDown" size={'2.5rem'} />
+        <h1 className="text-2xl max-[950px]:text-lg max-[1150px]:text-xl font-normal text-primary animate__animated animate__bounceIn flex items-center justify-center gap-2 font-merri-weather transition-all">
+          <span><span className="bg-accent text-accent-content p-1 rounded-sm"><strong>Peaceful mind</strong></span> throughout the day!</span>
+          <RiMentalHealthFill size={'1.5rem'} className="text-accent" />
         </h1>
-        <h3 className="text-2xl max-[950px]:text-lg max-[1100px]:text-base text-secondary font-normal animate__animated animate__fadeInUp">Your everyday mental health app!</h3>
+        <h3 className="text-xl max-[950px]:text-base max-[1150px]:text-lg text-secondary font-normal animate__animated animate__fadeInUp font-merri-weather transition-all">Your everyday <span className="bg-secondary text-secondary-content p-1 rounded-sm"><strong>mental health app!</strong></span></h3>
       </div>
-      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-neutral">
+      <div className="w-[100%] md:w-[50%] bg-neutral md:bg-neutral relative">
         <div className="flex h-full flex-col items-center justify-center gap-3">
+        <PiStarFourFill className="absolute md:hidden animate-pulse top-40 left-10 rotate-0 text-primary" size={'1.5rem'} />
+        {/* <PiStarFourFill className="absolute md:hidden animate-pulse bottom-10 left-1/2 rotate-45 text-primary" size={'1.5rem'} /> */}
+        <PiStarFourFill className="absolute md:hidden animate-pulse top-40 right-10 rotate-12 text-primary" size={'1.5rem'} />
+        
           <div className="fixed top-3 right-3 bg-no-repeat bg-contain bg-center w-[150px] h-[150px] animate__animated animate__backInRight" style={{ backgroundImage: `url(${SixPackMindLogo})` }}></div>
           <div className="block md:hidden bg-no-repeat bg-contain bg-center w-[275px] h-[275px] animate__animated animate__bounceIn" style={{ backgroundImage: `url(${MeditationLoginImg})` }}></div>
-          <h4 className="text-xl flex items-center justify-center gap-2 md:hidden max-[360px]:hidden font-normal text-primary md:text-black animate__animated animate__fadeIn ">
-            <span>Peaceful mind throughout the day!!</span>
+          <h4 className="text-lg flex items-center justify-center gap-2 md:hidden max-[360px]:hidden font-normal text-primary animate__animated animate__fadeIn font-merri-weather transition-all">
+            <span><span className="bg-accent text-accent-content p-1 rounded-sm"><strong>Peaceful mind</strong></span> throughout the day!!</span>
             <RiMentalHealthFill className="text-accent block max-[360px]:hidden" />
           </h4>
           <h3 className="text-lg text-secondary md:text-neutral-content font-semibold animate__animated animate__fadeIn">Log in</h3>
