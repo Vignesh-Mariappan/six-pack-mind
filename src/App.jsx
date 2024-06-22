@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const appTheme = localStorage.getItem('appTheme');
     if(appTheme) {
-      document.querySelector("html").setAttribute("data-theme", JSON.parse(appTheme));
+      document.querySelector("html").setAttribute("data-theme", appTheme);
     } else {
       document.querySelector("html").setAttribute("data-theme", "synthwave");
     }

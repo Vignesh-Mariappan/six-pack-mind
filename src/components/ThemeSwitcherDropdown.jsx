@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 const ThemeSwitcherDropdown = () => {
-    const [ currentTheme, setCurrentTheme ] = useState(JSON.parse(localStorage.getItem('appTheme')));
+    const [ currentTheme, setCurrentTheme ] = useState(localStorage.getItem('appTheme'));
 
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", currentTheme || 'synthwave');

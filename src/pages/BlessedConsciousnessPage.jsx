@@ -60,12 +60,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[0]['Date with breath'] = userActivities[0]['Date with breath'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithBreathMarked(false);
           } else {
             userActivities[0]['Date with breath'] = [...userActivities[0]['Date with breath'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithBreathMarked(true);
             playDing();
@@ -77,12 +81,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[1]['Date with body'] = userActivities[1]['Date with body'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithBodyMarked(false);
           } else {
             userActivities[1]['Date with body'] = [...userActivities[1]['Date with body'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithBodyMarked(true);
             playDing();
@@ -94,12 +102,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[2]['Date with food'] = userActivities[2]['Date with food'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithFoodMarked(false);
           } else {
             userActivities[2]['Date with food'] = [...userActivities[2]['Date with food'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsDateWithFoodMarked(true);
             playDing();
@@ -111,12 +123,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[3]['Hourly breaths'] = userActivities[3]['Hourly breaths'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsHourlyBreathsMarked(false);
           } else {
             userActivities[3]['Hourly breaths'] = [...userActivities[3]['Hourly breaths'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsHourlyBreathsMarked(true);
             playDing();
@@ -128,12 +144,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[4]['Count blessings'] = userActivities[4]['Count blessings'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsCountBlessingsMarked(false);
           } else {
             userActivities[4]['Count blessings'] = [...userActivities[4]['Count blessings'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsCountBlessingsMarked(true);
             playDing();
@@ -145,12 +165,16 @@ const BlessedConsciousnessPage = () => {
             userActivities[5]['Tough things'] = userActivities[5]['Tough things'].filter(date => date!== currentDate?.toDateString());
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsToughThingsMarked(false);
           } else {
             userActivities[5]['Tough things'] = [...userActivities[5]['Tough things'], currentDate?.toDateString() ];
             await setDoc(doc(firestoreDB, 'users', user?.displayName), {
               activities: userActivities
+            }, {
+              merge: true
             });
             setIsToughThingsMarked(true);
             playDing();
