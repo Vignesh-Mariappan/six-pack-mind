@@ -11,6 +11,7 @@ import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, firestoreDB, googleProvider } from '../firebase/config';
+import toast, { Toaster } from "react-hot-toast";
 
 const LoginPage = () => {
   const [ user ] = useAuthState(auth);
@@ -35,7 +36,7 @@ const LoginPage = () => {
         });
       }
     } catch (err) {
-      console.error('Error signing in with google ', err);
+      toast.error('Error logging in with google. Please try again');
     }
   }
 
@@ -76,6 +77,7 @@ const LoginPage = () => {
           </button>
         </div>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   )
 }
