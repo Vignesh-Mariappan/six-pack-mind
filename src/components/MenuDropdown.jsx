@@ -54,17 +54,17 @@ const MenuDropdown = () => {
           <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-64" onClick={closeMenu}>
             <Link to='/'>
               <li className="mb-2">
-                <button className={`p-2 ${isMeditation && 'bg-base-200'}`}>
-                  <GiMeditation className={isMeditation && 'text-secondary' } />
-                  <span className={ isMeditation && 'font-semibold text-secondary' }>Meditation</span>  
+                <button className={`p-2 ${isMeditation ? 'bg-base-200' : ''}`}>
+                  <GiMeditation className={isMeditation ? 'text-secondary' : '' } />
+                  <span className={ isMeditation ? 'font-semibold text-secondary' : '' }>Meditation</span>  
                 </button>
               </li>
             </Link>
             <Link to='/blessed-consciousness/'>
               <li className="mb-2">
-                <button className={`p-2 ${isBlessedConsciousness && 'bg-base-200'}`}>
-                  <FaHandHoldingHeart className={isBlessedConsciousness && 'text-secondary' } />
-                  <span className={ isBlessedConsciousness && 'font-semibold text-secondary' }>Blessed Consciousness</span>  
+                <button className={`p-2 ${isBlessedConsciousness ? 'bg-base-200' : '' }`}>
+                  <FaHandHoldingHeart className={isBlessedConsciousness ? 'text-secondary' : '' } />
+                  <span className={ isBlessedConsciousness ? 'font-semibold text-secondary' : '' }>Blessed Consciousness</span>  
                 </button>
               </li>
             </Link>

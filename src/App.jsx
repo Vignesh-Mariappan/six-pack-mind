@@ -15,7 +15,8 @@ function App() {
   progressRef.current = progressWidth;
 
   useEffect(() => {
-    const appTheme = localStorage.getItem('appTheme');
+    const appTheme = JSON.parse(localStorage.getItem('appTheme'));
+
     if(appTheme) {
       document.querySelector("html").setAttribute("data-theme", appTheme);
     } else {

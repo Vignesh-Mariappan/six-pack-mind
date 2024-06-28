@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 const ThemeSwitcherDropdown = () => {
-    const [ currentTheme, setCurrentTheme ] = useState(localStorage.getItem('appTheme'));
+    const [ currentTheme, setCurrentTheme ] = useState(JSON.parse(localStorage.getItem('appTheme')));
 
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", currentTheme || 'synthwave');
@@ -56,19 +56,19 @@ const ThemeSwitcherDropdown = () => {
 
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52" onClick={themeSwitcher}>
               <li className="mb-2"><button>
-                <span className={ isNight && 'font-semibold text-primary' }>Night</span>  
+                <span className={ isNight ? 'font-semibold text-primary' : '' }>Night</span>  
                 { isNight && <FaCheck className='text-primary' /> }
               </button></li>
               <li className="mb-2"><button>
-                <span className={ isCoffee && 'font-semibold text-primary' }>Coffee</span>
+                <span className={ isCoffee ? 'font-semibold text-primary' : '' }>Coffee</span>
                 { isCoffee && <FaCheck className='text-primary' /> }
               </button></li>
               <li className="mb-2"><button>
-                <span className={ isSynthwave && 'font-semibold text-primary' }>Synthwave</span> 
+                <span className={ isSynthwave ? 'font-semibold text-primary' : '' }>Synthwave</span> 
                 { isSynthwave && <FaCheck className='text-primary' /> }
               </button></li>
               <li className="mb-2"><button>
-                <span className={ isForest && 'font-semibold text-primary' }>Forest</span> 
+                <span className={ isForest ? 'font-semibold text-primary' : '' }>Forest</span> 
                 { isForest && <FaCheck className='text-primary' /> }
               </button></li>
         </ul>
