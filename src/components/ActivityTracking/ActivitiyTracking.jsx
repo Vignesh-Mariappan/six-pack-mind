@@ -8,7 +8,7 @@ import { FaMedal } from "react-icons/fa";
 
 const ActivitiyTracking = () => {
   const [ user ] = useAuthState(auth);
-  const userDoc = useFetchCurrentUserDoc(user?.displayName);
+  const userDoc = useFetchCurrentUserDoc(user?.email);
   const usersData = useFetchUsersCollection('users');
 
   const day1 = new Date().toDateString(); // today
@@ -60,7 +60,7 @@ const ActivitiyTracking = () => {
       const percentage = Math.round((totalCount / 42) * 100);
 
       const currentUser = {
-        key: user?.displayName,
+        key: user?.email,
         name: user?.displayName,
         count: totalCount,
         percentage,

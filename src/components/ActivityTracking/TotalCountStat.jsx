@@ -5,7 +5,7 @@ import { auth } from '../../firebase/config';
 
 const TotalCountStat = () => {
   const [ user ] = useAuthState(auth);
-  const userDoc = useFetchCurrentUserDoc(user?.displayName);
+  const userDoc = useFetchCurrentUserDoc(user?.email);
 
   return (
     <>

@@ -16,7 +16,7 @@ const LastSevenDaysProgress = ({ activityIndex }) => {
 
   const [ activityProgress, setActivityProgress ] = useState([]);
   const [ user ] = useAuthState(auth);
-  const userDoc = useFetchCurrentUserDoc(user?.displayName);
+  const userDoc = useFetchCurrentUserDoc(user?.email);
 
   useEffect(() => {
     const userActivities = userDoc?.activities;
@@ -32,7 +32,7 @@ const LastSevenDaysProgress = ({ activityIndex }) => {
                 isUserMarked
             }
             activities.push(currentActivityProgress);
-            date = new Date(new Date().setDate(date.getDate() - 1));
+            date = new Date(date.setDate(date.getDate() - 1));
         }
 
         setActivityProgress(activities.reverse());

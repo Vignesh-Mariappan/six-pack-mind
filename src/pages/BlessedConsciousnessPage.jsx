@@ -13,7 +13,7 @@ import toast, { Toaster } from "react-hot-toast";
 const BlessedConsciousnessPage = () => {
 
   const [ user ] = useAuthState(auth);
-  const userDoc = useFetchCurrentUserDoc(user?.displayName);
+  const userDoc = useFetchCurrentUserDoc(user?.email);
   const [ currentDate, setCurrentDate ] = useState(new Date());
   const [ isLoading, setIsLoading ] = useState(false);
   
@@ -67,7 +67,7 @@ const BlessedConsciousnessPage = () => {
 
   const onBlessedActivityMarked = async (event) => {
     const activityId = event.target.id;
-    let userRef = doc(firestoreDB, 'users', user?.displayName);
+    let userRef = doc(firestoreDB, 'users', user?.email);
     const userSnap = await getDoc(userRef);
 
     if (userSnap.exists()) {
@@ -79,7 +79,7 @@ const BlessedConsciousnessPage = () => {
             if(isDateWithBreathMarked) {
               userActivities[0]['Date with breath'] = userActivities[0]['Date with breath'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -91,7 +91,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[0]['Date with breath'] = [...userActivities[0]['Date with breath'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -108,7 +108,7 @@ const BlessedConsciousnessPage = () => {
             if(isDateWithBodyMarked) {
               userActivities[1]['Date with body'] = userActivities[1]['Date with body'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -120,7 +120,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[1]['Date with body'] = [...userActivities[1]['Date with body'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -137,7 +137,7 @@ const BlessedConsciousnessPage = () => {
             if(isDateWithFoodMarked) {
               userActivities[2]['Date with food'] = userActivities[2]['Date with food'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -149,7 +149,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[2]['Date with food'] = [...userActivities[2]['Date with food'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -166,7 +166,7 @@ const BlessedConsciousnessPage = () => {
             if(isHourlyBreathsMarked) {
               userActivities[3]['Hourly breaths'] = userActivities[3]['Hourly breaths'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -178,7 +178,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[3]['Hourly breaths'] = [...userActivities[3]['Hourly breaths'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -195,7 +195,7 @@ const BlessedConsciousnessPage = () => {
             if(isCountBlessingsMarked) {
               userActivities[4]['Count blessings'] = userActivities[4]['Count blessings'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -207,7 +207,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[4]['Count blessings'] = [...userActivities[4]['Count blessings'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -224,7 +224,7 @@ const BlessedConsciousnessPage = () => {
             if(isToughThingsMarked) {
               userActivities[5]['Tough things'] = userActivities[5]['Tough things'].filter(date => date!== currentDate?.toDateString());
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true
@@ -236,7 +236,7 @@ const BlessedConsciousnessPage = () => {
             } else {
               userActivities[5]['Tough things'] = [...userActivities[5]['Tough things'], currentDate?.toDateString() ];
               try {
-                await setDoc(doc(firestoreDB, 'users', user?.displayName), {
+                await setDoc(doc(firestoreDB, 'users', user?.email), {
                   activities: userActivities
                 }, {
                   merge: true

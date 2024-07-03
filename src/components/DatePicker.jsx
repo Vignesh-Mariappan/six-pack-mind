@@ -2,28 +2,28 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const DatePicker = ({ currentDate, setCurrentDate, setIsLoading }) => {
 
-    const goToPreviousDate = () => {
-        setIsLoading(true);
-        let previousDate = new Date(new Date().setDate(currentDate.getDate() - 1));
-        setCurrentDate(previousDate);
+  const goToPreviousDate = () => {
+    setIsLoading(true);
+    let previousDate = new Date(currentDate.setDate(currentDate.getDate() - 1));
+    setCurrentDate(previousDate);
 
 
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 300);
-    }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
+  }
     
-    const goToNextDate = () => {
-        setIsLoading(true);
-        let nextDate = new Date(new Date().setDate(currentDate.getDate() + 1));
-        setCurrentDate(nextDate);
+  const goToNextDate = () => {
+    setIsLoading(true);
+    let nextDate = new Date(currentDate.setDate(currentDate.getDate() + 1));
+    setCurrentDate(nextDate);
 
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 300);
-    }
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 300);
+  }
 
-    const isCurrentDateEqualsToday = currentDate.toDateString() === new Date().toDateString();
+  const isCurrentDateEqualsToday = currentDate.toDateString() === new Date().toDateString();
 
   return (
     <div className="flex justify-center items-stretch my-5 animate__animated animate__fadeIn animate__delay-1s">

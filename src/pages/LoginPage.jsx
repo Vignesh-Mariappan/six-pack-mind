@@ -19,7 +19,8 @@ const LoginPage = () => {
   const signInWithGoogle = async () => {
     try {
       const signedInUser = await signInWithPopup(auth, googleProvider);
-      const userRef = doc(firestoreDB, 'users', signedInUser?.user?.displayName);
+      console.log('signed in user: ', signedInUser)
+      const userRef = doc(firestoreDB, 'users', signedInUser?.user?.email);
       const userSnap = await getDoc(userRef);
       if (!userSnap.exists()) {
         await setDoc(userRef, {
