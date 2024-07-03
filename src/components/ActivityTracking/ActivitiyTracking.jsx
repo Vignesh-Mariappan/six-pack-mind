@@ -118,9 +118,9 @@ const ActivitiyTracking = () => {
                   {
                     topRankHolders?.map((currentUser, index) => (
                       currentUser?.percentage > 0 ? (
-                        <tr className="text-base text-cyan-600" key={currentUser?.name || index}>
+                        <tr className="text-base text-cyan-600" key={index}>
                           <td>{index + 1}</td>
-                          <td className="font-bold" style={{ wordWrap: 'anywhere' }}>{ currentUser.name === user?.displayName ? `${currentUser?.name} (You)` : currentUser?.name }</td>
+                          <td className="font-bold" style={{ wordWrap: 'anywhere' }}>{ currentUser?.name }</td>
                           <td className="font-semibold">{currentUser.percentage}%</td>
                           <td><FaMedal className={`${index === 0 ? 'text-yellow-500' : index === 1 ? 'text-slate-300' : 'text-yellow-900'}`} size={'1.2rem'} /></td>
                         </tr>
@@ -134,10 +134,10 @@ const ActivitiyTracking = () => {
             <div className="overflow-x-auto w-full font-open-sans flex flex-col justify-center items-center gap-4 lg:hidden">
                 { topRankHolders?.map((currentUser, index) => (
                   currentUser?.percentage > 0 ? (
-                    <div className="card bg-neutral w-96 max-[400px]:w-80 max-[325px]:w-72 shadow-xl" key={ currentUser?.name || index }>
+                    <div className="card bg-neutral w-96 max-[400px]:w-80 max-[325px]:w-72 shadow-xl" key={ index }>
                       <div className="card-body">
                         <h2 className="card-title text-primary">{ `Rank ${index + 1} `   }<FaMedal className={`${index === 0 ? 'text-yellow-500' : index === 1 ? 'text-slate-300' : 'text-yellow-900'}`} size={'1.2rem'} /></h2>
-                        <h5 className="text-accent">{ currentUser.name === user?.displayName ? `${currentUser?.name} (You)` : currentUser?.name }</h5>
+                        <h5 className="text-accent">{ currentUser?.name }</h5>
                         <p className="font-semibold text-success">{ `${ currentUser?.percentage ?? '0%' }%` }</p>
                       </div>
                     </div>
