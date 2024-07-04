@@ -121,17 +121,16 @@ const AudioPlayer = ({ id, audioTitle = "", audioPath = "", currentPlayingAudioI
           <h2 className="card-title text-wrap font-normal md:font-semibold">{ audioTitle }</h2>
           <div className="flex relative items-center justify-start gap-2">
               <button className="btn btn-circle btn-outline" onClick={audioPlayControl}>
-              {
-                  showPlay === true && <FaPlay size={"1rem"} /> }
-              { showPlay === false && (
-                  <FaPause size={"1rem"} />
-                  )
-              }
-              {
-                  showReplay === true && (
-                  <MdOutlineReplay size={"1.5rem"} />
-                  )
-              }
+                { showPlay === true && <FaPlay size={"1rem"} /> }
+                { showPlay === false && (
+                    <FaPause size={"1rem"} />
+                    )
+                }
+                {
+                    showReplay === true && (
+                    <MdOutlineReplay size={"1.5rem"} />
+                    )
+                }
               </button> 
               { !muted ? (
                   <button className="btn btn-circle btn-outline btn-success"  onClick={muteAudio}>

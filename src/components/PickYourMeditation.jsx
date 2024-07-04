@@ -16,16 +16,6 @@ const PickYourMeditation = () => {
         
         <PickYourMeditationDropdown selectedMeditation={selectedMeditation} setSelectedMeditation={setSelectedMeditation} setSelectedMeditationAudios={setSelectedMeditationAudios} />
 
-        {/* <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-3 items-stretch sm:min-w-[200px] text-nowrap animate__animated animate__fadeIn animate__slow" onClick={meditationTypeClickHandler}>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 1 && outlineClasses } bg-[#e11d48]`}>Well Being First</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 2 && outlineClasses } bg-[#0369a1]`}>Dehype/De-Link</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 3 && outlineClasses } bg-[#2e1065]`}>Fake Need Release</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 4 && outlineClasses } bg-[#4a044e]`}>Limiting Views & Habits</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 5 && outlineClasses } col-span-2 md:col-span-1 bg-[#ea580c]`}>Blessed Consciousness</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 6 && outlineClasses } col-span-2 md:col-span-1 bg-[#7e22ce]`}>Blessed Consciousness Max</div>
-          <div className={`${meditationTypeClasses} ${ selectedMeditation === 7 && outlineClasses } col-span-2 md:col-span-1 bg-[#16a34a]`}>Final Meditation</div>
-        </div> */}
-
         <div className="flex flex-col items-center gap-5 my-4 animate__animated animate__fadeIn animate__delay-1s">
           {
             selectedMeditationAudios?.map(meditationAudio => <AudioPlayer key={meditationAudio?.id} currentPlayingAudioId={currentPlayingAudioId} setCurrentPlayingAudioId={setCurrentPlayingAudioId} { ...meditationAudio } />)
