@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 const ThemeSwitcherDropdown = () => {
-    const [ currentTheme, setCurrentTheme ] = useState(JSON.parse(localStorage.getItem('appTheme')));
+    // const [ currentTheme, setCurrentTheme ] = useState(localStorage.getItem('appTheme'));
+    const [ currentTheme, setCurrentTheme ] = useState('synthwave');
 
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", currentTheme || 'synthwave');
@@ -34,7 +35,7 @@ const ThemeSwitcherDropdown = () => {
     setCurrentTheme(appTheme);
 
     // setting the current theme in localStorage
-    localStorage.setItem('appTheme', JSON.stringify(appTheme)); 
+    // localStorage.setItem('appTheme', JSON.stringify(appTheme)); 
   }
 
   const isNight = currentTheme?.toLowerCase() === 'night';
@@ -43,10 +44,10 @@ const ThemeSwitcherDropdown = () => {
   const isForest = currentTheme?.toLowerCase() === 'forest';
 
   // first time when the user logged in to the app
-  if(!currentTheme) {
-    isSynthwave = true;
-    localStorage.setItem('appTheme', 'synthwave');
-  }
+  // if(!currentTheme) {
+  //   isSynthwave = true;
+  //   localStorage.setItem('appTheme', 'synthwave');
+  // }
 
   return (
     <div className="dropdown dropdown-bottom dropdown-end z-[997]">

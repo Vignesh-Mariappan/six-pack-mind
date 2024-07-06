@@ -15,13 +15,15 @@ function App() {
   progressRef.current = progressWidth;
 
   useEffect(() => {
-    const appTheme = JSON.parse(localStorage.getItem('appTheme'));
+    // const appTheme = JSON.parse(localStorage.getItem('appTheme'));
 
-    if(appTheme) {
-      document.querySelector("html").setAttribute("data-theme", appTheme);
-    } else {
-      document.querySelector("html").setAttribute("data-theme", "synthwave");
-    }
+    // if(appTheme) {
+    //   document.querySelector("html").setAttribute("data-theme", appTheme);
+    // } else {
+    //   document.querySelector("html").setAttribute("data-theme", "synthwave");
+    // }
+
+    document.querySelector("html").setAttribute("data-theme", "synthwave");
   }, [])
 
   useEffect(() => {
