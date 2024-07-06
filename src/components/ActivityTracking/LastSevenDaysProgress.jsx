@@ -41,23 +41,23 @@ const LastSevenDaysProgress = ({ activityIndex }) => {
   }, [activityIndex, userDoc?.activities]);
 
   return (
-    <div className="card w-auto max-w-[350px] max-[350px]:w-[300px] bg-base-300 shadow-xl">
+    <div className="card w-auto min-w-[300px] max-w-[350px] max-[350px]:w-[300px] bg-base-300 shadow-xl">
         { userDoc?.activities && (
             <h5 className="font-open-sans text-lg text-primary animate__animated animate__fadeIn text-center pt-4">{ Object.keys(userDoc?.activities[activityIndex])[0] }</h5>
         )}
         <div className="card-body px-8 py-6 max-[350px]:p-4 ">
-                <div className="flex justify-between gap-3">
-                    {
-                        activityProgress?.map((current, index) => {
-                            return (
-                                <div key={index} className="w-[28px] flex flex-col items-center gap-3">
-                                    <progress className="progress progress-accent w-4 h-28" value={ current?.isUserMarked ? '100' : '0' } max="100"></progress>
-                                    <div className="text-base text-secondary">{ current?.day }</div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+            <div className="flex justify-between gap-3">
+                {
+                    activityProgress?.map((current, index) => {
+                        return (
+                            <div key={index} className="w-[28px] flex flex-col items-center gap-3">
+                                <progress className="progress progress-accent w-4 h-28" value={ current?.isUserMarked ? '100' : '0' } max="100"></progress>
+                                <div className="text-base text-secondary">{ current?.day }</div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
     </div>
   )
