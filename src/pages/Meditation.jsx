@@ -2,11 +2,11 @@ import PickYourMeditation from '../components/PickYourMeditation';
 
 import 'animate.css';
 
-const HomePage = () => {
+const Meditation = () => {
 
   return (
     <PickYourMeditation />
   )
 }
 
-export default HomePage;
+export default Meditation;

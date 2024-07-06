@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import HomePage from './pages/HomePage'
+import Meditation from './pages/Meditation'
 import LoadingPage from './pages/LoadingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ProtectedRoutes from './utils/ProtectedRoutes';
@@ -51,8 +51,8 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route element={<ProtectedRoutes />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path='/blessed-consciousness/' element={<BlessedConsciousnessPage />} />
+            <Route path="/" element={<BlessedConsciousnessPage />} />
+            <Route path='/meditation/' element={<Meditation />} />
           </Route>
           <Route path="/login/" element={<LoginPage />} />
           <Route path='*' element={<ErrorPage />} />
