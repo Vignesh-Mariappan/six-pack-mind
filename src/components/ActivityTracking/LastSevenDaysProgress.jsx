@@ -41,7 +41,7 @@ const LastSevenDaysProgress = ({ activityIndex }) => {
   }, [activityIndex, userDoc?.activities]);
 
   return (
-    <div className="card max-w-[350px] max-[350px]:w-[300px] bg-base-300 shadow-xl">
+    <div className="card W-[332px] max-w-[350px] max-[350px]:w-[300px] bg-base-300 shadow-xl">
         { userDoc?.activities && (
             <h5 className="font-open-sans text-lg text-primary animate__animated animate__fadeIn text-center pt-4">{ Object.keys(userDoc?.activities[activityIndex])[0] }</h5>
         )}
