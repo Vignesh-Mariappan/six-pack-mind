@@ -73,7 +73,7 @@ const Leaderboard = () => {
     const rankThree = usersDataSource?.filter(user => user?.percentage === userPercentages[2])?.map(user => user?.name);
   
     // data source for the leaderboard table
-    const topRankHolders = userPercentages?.map((userPercentage, index) => {
+    const topRankHolders = userPercentages?.slice(0, 3).map((userPercentage, index) => {
       const ranks = [ rankOne, rankTwo, rankThree ];
       return {
         name: ranks[index]?.length > 0 ? ranks[index].join(', ') : ranks[index][0],
