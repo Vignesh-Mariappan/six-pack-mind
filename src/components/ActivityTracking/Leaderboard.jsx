@@ -3,16 +3,18 @@ import { FaMedal } from "react-icons/fa";
 
 const Leaderboard = () => {
     const usersData = useFetchUsersCollection('users');
+    let topRankHolders = [];
 
-    const day1 = new Date().toDateString(); // today
-    const day2 = new Date(new Date().setDate(new Date().getDate() - 1)).toDateString();
-    const day3 = new Date(new Date().setDate(new Date().getDate() - 2)).toDateString();
-    const day4 = new Date(new Date().setDate(new Date().getDate() - 3)).toDateString();
-    const day5 = new Date(new Date().setDate(new Date().getDate() - 4)).toDateString();
-    const day6 = new Date(new Date().setDate(new Date().getDate() - 5)).toDateString();
-    const day7 = new Date(new Date().setDate(new Date().getDate() - 6)).toDateString();
+    try {
+      const day1 = new Date().toDateString(); // today
+      const day2 = new Date(new Date().setDate(new Date().getDate() - 1)).toDateString();
+      const day3 = new Date(new Date().setDate(new Date().getDate() - 2)).toDateString();
+      const day4 = new Date(new Date().setDate(new Date().getDate() - 3)).toDateString();
+      const day5 = new Date(new Date().setDate(new Date().getDate() - 4)).toDateString();
+      const day6 = new Date(new Date().setDate(new Date().getDate() - 5)).toDateString();
+      const day7 = new Date(new Date().setDate(new Date().getDate() - 6)).toDateString();
   
-    const usersDataSource = usersData?.map(user => {
+      const usersDataSource = usersData?.map(user => {
   
         const activityDWBr = user?.activities[0]['Date with breath'];
         const activityDWB = user?.activities[1]['Date with body'];
@@ -60,26 +62,29 @@ const Leaderboard = () => {
         }
   
         return currentUser;
-    });
+      });
   
-    usersDataSource?.sort((user1, user2) => user2.percentage - user1.percentage);
+      usersDataSource?.sort((user1, user2) => user2.percentage - user1.percentage);
   
-    // find all the unique percentages of users
-    const userPercentages = [ ...new Set(usersDataSource?.map((user) => user.percentage)) ]; 
+      // find all the unique percentages of users
+      const userPercentages = [ ...new Set(usersDataSource?.map((user) => user.percentage)) ]; 
   
-    // find the users with the top three percentages
-    const rankOne = usersDataSource?.filter(user => user?.percentage === userPercentages[0])?.map(user => user?.name);
-    const rankTwo = usersDataSource?.filter(user => user?.percentage === userPercentages[1])?.map(user => user?.name);
-    const rankThree = usersDataSource?.filter(user => user?.percentage === userPercentages[2])?.map(user => user?.name);
-  
-    // data source for the leaderboard table
-    const topRankHolders = userPercentages?.slice(0, 3).map((userPercentage, index) => {
-      const ranks = [ rankOne, rankTwo, rankThree ];
-      return {
-        name: ranks[index]?.length > 0 ? ranks[index].join(', ') : ranks[index][0],
-        percentage: userPercentage
-      }
-    });
+      // find the users with the top three percentages
+      const rankOne = usersDataSource?.filter(user => user?.percentage === userPercentages[0])?.map(user => user?.name);
+      const rankTwo = usersDataSource?.filter(user => user?.percentage === userPercentages[1])?.map(user => user?.name);
+      const rankThree = usersDataSource?.filter(user => user?.percentage === userPercentages[2])?.map(user => user?.name);
+    
+      // data source for the leaderboard table
+      topRankHolders = userPercentages?.slice(0, 3).map((userPercentage, index) => {
+        const ranks = [ rankOne, rankTwo, rankThree ];
+        return {
+          name: ranks[index]?.length > 0 ? ranks[index].join(', ') : ranks[index][0],
+          percentage: userPercentage
+        }
+      });
+    } catch (error) {
+      topRankHolders = [];
+    }
     
   return topRankHolders?.length > 0 ? (
       <>
