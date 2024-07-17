@@ -10,9 +10,9 @@ import FinalMeditationImg from "./images/final-meditation.jpeg";
 /* Well being first */
 import WellBeingFirstOne from "./audios/Well_being_first/1-Ready_to_lose_getting_and_doing_but_not_being.mp3";
 import WellBeingFirstTwo from "./audios/Well_being_first/2-Well_being_before_closed_ones.mp3";
-import WellBeingFirstThree from "./audios/Well_being_first/3-Success_due_to_well_being_not_at_the_cost_of_well_being.mp3";
-import WellBeingFirstFour from "./audios/Well_being_first/4-Well_being_gives_me_top_performance.mp3";
-import WellBeingFirstFive from "./audios/Well_being_first/5-Balance_bhava_tough_conversations_made_easy.mp3";
+import WellBeingFirstThree from "./audios/Well_being_first/3-Well_being_gives_me_top_performance.mp3";
+import WellBeingFirstFour from "./audios/Well_being_first/4-Balance_bhava_tough_conversations_made_easy.mp3";
+import WellBeingFirstFive from "./audios/Well_being_first/5-Success_due_to_well_being_not_at_the_cost_of_well_being.mp3";
 
 /* Fake Need Release */
 import NoFakeNeedsOne from "./audios/Fake_needs/1-I_will_release_myself_from_jail.mp3";
@@ -66,21 +66,21 @@ export const AUDIOS = {
 
         {
             id: "WB03",
-            audioTitle: "Success due to well being",
+            audioTitle: "Well being gives me top performance",
             audioPath: WellBeingFirstThree,
             imgSrc: WellBeingImg
         },
 
         {
             id: "WB04",
-            audioTitle: "Well being gives me top performance",
+            audioTitle: "Balance bhava tough conversations made easy",
             audioPath: WellBeingFirstFour,
             imgSrc: WellBeingImg
         },
 
         {
             id: "WB05",
-            audioTitle: "Balance bhava tough conversations made easy",
+            audioTitle: "Success due to well being",
             audioPath: WellBeingFirstFive,
             imgSrc: WellBeingImg
         },
